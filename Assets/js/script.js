@@ -2,6 +2,7 @@
 console.log("hellowkhey");
 
 // set score
+var bet  =prompt("Please insert bet");
 let computerscore = 0;
 let userscore=0;
 
@@ -47,6 +48,17 @@ function win(userChoic, computerchoice)
 		// console.log("choiceko"+userChoice);
 
 	// computerImg_div.src = images;
+	if (userscore ==bet){
+		
+		computerscore = 0;
+		userscore =0;
+		userScore_span.innerHTML = userscore;
+		computerScore_span.innerHTML  = computerscore;
+		alert('YOU Wins!');
+		// revalidate();
+		// repaint();
+		location.reload();
+	}
 
 }
 function lose()
@@ -56,6 +68,20 @@ function lose()
 	userScore_span.innerHTML = userscore;
 	computerScore_span.innerHTML  = computerscore;
 	result_div.innerHTML = "Computer Win";
+	if (computerscore ==bet){
+		// console.log('Computer');
+		// exit();
+		
+		computerscore = 0;
+		userscore =0;
+		userScore_span.innerHTML = userscore;
+		computerScore_span.innerHTML  = computerscore;
+		// var bet  =prompt("Please insert bet");
+		alert('Computer Wins!');
+		// revalidate();
+		// repaint();
+		location.reload();
+	}
 	// insertimages();
 }
 function draw()
@@ -63,6 +89,7 @@ function draw()
 	console.log("draw");
 	userScore_span.innerHTML = userscore;
 	computerScore_span.innerHTML  = computerscore;
+	// var bet  =prompt("Please insert bet");
 	result_div.innerHTML = "Draw";
 }
 
